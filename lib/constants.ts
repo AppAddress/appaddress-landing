@@ -40,3 +40,8 @@ export const NAV_LINKS = [
 ];
 
 export const COPYRIGHT_YEAR = 2026;
+
+// Date the privacy policy was last reviewed. Update this whenever the policy
+// text on /privacy changes — reviewers (and users) check it, and a stale date
+// reads as an unmaintained policy.
+export const PRIVACY_LAST_UPDATED = "27 November 2026";

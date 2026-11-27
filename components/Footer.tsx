@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { COMPANY_NAME, CONTACT_EMAIL, COPYRIGHT_YEAR } from "@/lib/constants";
 
 export function Footer() {
@@ -7,12 +8,23 @@ export function Footer() {
         <p>
           &copy; {COPYRIGHT_YEAR} {COMPANY_NAME}
         </p>
-        <a
-          href={`mailto:${CONTACT_EMAIL}`}
-          className="transition-colors hover:text-accent"
+        <nav
+          aria-label="Legal"
+          className="flex items-center gap-6"
         >
-          {CONTACT_EMAIL}
-        </a>
+          <Link
+            href="/privacy"
+            className="transition-colors hover:text-accent"
+          >
+            Privacy Policy
+          </Link>
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="transition-colors hover:text-accent"
+          >
+            {CONTACT_EMAIL}
+          </a>
+        </nav>
       </div>
     </footer>
   );
