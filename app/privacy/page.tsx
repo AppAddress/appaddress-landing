@@ -8,7 +8,7 @@ import {
 } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: `Privacy Policy — ${COMPANY_NAME}`,
+  title: "Privacy Policy",
   description: `How ${COMPANY_NAME} and its product RemindPulse collect, use, and protect personal data, including WhatsApp appointment-reminder data.`,
   alternates: {
     canonical: "https://appaddress.net/privacy",
