@@ -2,25 +2,28 @@
 
 /*
   Brand tokens — AppAddress.
-  Quiet, premium software-studio feel. Light mode default.
-  Accent is a disciplined deep indigo (deliberately NOT RemindPulse's teal),
-  so the parent brand reads as independent and sits above its products.
-  Swap --color-accent during the later UI/UX polish pass to retheme everything.
+  Dark premium studio: a near-true-black canvas, warm off-white type, and a
+  single luminous indigo spent sparingly. One editorial serif (Instrument Serif)
+  carries the wordmark and display lines; Inter handles everything else.
+  The accent is deliberately NOT RemindPulse's teal — the parent brand reads as
+  independent and sits above its products.
 */
 @theme {
-  --color-ink: #16161d;
-  --color-ink-soft: #3f3f4a;
-  --color-muted: #6b6b76;
-  --color-line: #e7e7ec;
-  --color-surface: #ffffff;
-  --color-surface-soft: #f7f7f9;
+  --color-surface: #0b0b0d; /* page canvas */
+  --color-surface-soft: #141418; /* raised panels */
+  --color-ink: #f4f4f0; /* primary text — warm off-white */
+  --color-ink-soft: #c7c7cd; /* secondary text */
+  --color-muted: #8f8f99; /* tertiary / supporting text */
+  --color-line: #242429; /* hairlines & borders */
 
-  --color-accent: #4338ca;
-  --color-accent-strong: #3730a3;
-  --color-accent-soft: #eef0ff;
+  --color-accent: #7c70ff; /* luminous indigo — used sparingly */
+  --color-accent-strong: #9a90ff;
+  --color-accent-soft: rgba(124, 112, 255, 0.14); /* glow only */
 
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system,
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: var(--font-instrument-serif), ui-serif, Georgia, Cambria,
+    "Times New Roman", serif;
 }
 
 html {
@@ -49,6 +52,28 @@ section[id] {
 /* Clear, consistent keyboard focus for accessibility. */
 :focus-visible {
   outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
+  outline-offset: 3px;
   border-radius: 2px;
+}
+
+/* The single orchestrated entrance on the page — the hero line only. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise {
+  animation: rise 0.7s cubic-bezier(0.2, 0.6, 0.2, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise {
+    animation: none;
+  }
 }

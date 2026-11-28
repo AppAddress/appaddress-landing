@@ -8,7 +8,7 @@ import {
 } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: `Privacy Policy — ${COMPANY_NAME}`,
+  title: "Privacy Policy",
   description: `How ${COMPANY_NAME} and its product RemindPulse collect, use, and protect personal data, including WhatsApp appointment-reminder data.`,
   alternates: {
     canonical: "https://appaddress.net/privacy",
@@ -69,9 +69,11 @@ export default function PrivacyPolicy() {
           <Section title="1. Who we are">
             <p>
               <span className="font-semibold text-ink">{COMPANY_NAME}</span> is a
-              product house based in India. This Privacy Policy explains how we
-              handle personal data across {COMPANY_NAME} and our flagship
-              product, <span className="font-semibold text-ink">RemindPulse</span>.
+              sole proprietorship registered in India (Udyam Registration No.
+              UDYAM-MH-01-0327537), based in Pune, Maharashtra, India. This
+              Privacy Policy explains how we handle personal data across{" "}
+              {COMPANY_NAME} and our flagship product,{" "}
+              <span className="font-semibold text-ink">RemindPulse</span>.
             </p>
             <p>
               For any question about this policy or your data, contact us at{" "}
