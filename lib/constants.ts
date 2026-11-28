@@ -9,10 +9,17 @@
 
 export const COMPANY_NAME = "AppAddress";
 
+// Used in page metadata (title / OG). Kept separate from the hero copy below.
 export const TAGLINE = "We build highly effective, custom-made products.";
 
+// Hero display statement — set in the editorial serif, across two lines.
+export const HERO_LINE_A = "A product house.";
+export const HERO_LINE_B = "We build software that lasts.";
+
+// Supporting line under the hero statement. Intentionally omits the company
+// name (the nav wordmark and About section carry it) per the rule above.
 export const HERO_SUPPORTING =
-  "A product house crafting software that solves real problems — built to be effective, tailored, and lasting.";
+  "An independent studio in Pune, India — making effective, custom-made tools, and the home of RemindPulse.";
 
 // Placeholder business contact. Will later be swapped for a business-domain
 // address — change it here and it updates everywhere.
@@ -22,19 +29,21 @@ export type Product = {
   name: string;
   blurb: string;
   url: string;
+  status: string;
 };
 
 export const PRODUCTS: Product[] = [
   {
     name: "RemindPulse",
     blurb:
-      "Automated WhatsApp appointment reminders for clinics. Fewer no-shows, less manual follow-up.",
+      "WhatsApp appointment reminders for clinics — fewer no-shows, less manual follow-up.",
     url: "https://remindpulse.appaddress.net",
+    status: "Live",
   },
 ];
 
 export const NAV_LINKS = [
-  { label: "Products", href: "#products" },
+  { label: "Work", href: "#products" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];

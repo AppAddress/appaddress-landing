@@ -2,20 +2,17 @@ import { CONTACT_EMAIL } from "@/lib/constants";
 
 export function Contact() {
   return (
-    <section id="contact" className="bg-surface-soft">
-      <div className="mx-auto max-w-6xl px-6 py-20 sm:py-24">
-        <h2 className="text-sm font-semibold uppercase tracking-wider text-accent">
-          Contact
+    <section id="contact" className="border-t border-line">
+      <div className="mx-auto max-w-5xl px-6 py-20 sm:py-28">
+        <h2 className="font-serif text-3xl text-ink sm:text-4xl">
+          Let&rsquo;s talk
         </h2>
-        <p className="mt-4 text-2xl font-medium leading-snug text-ink">
-          Get in touch.
-        </p>
-        <p className="mt-4 max-w-xl leading-relaxed text-muted">
-          Open to the right collaborations — reach out.
+        <p className="mt-4 max-w-md leading-relaxed text-muted">
+          Open to the right collaborations. The fastest way to reach us:
         </p>
         <a
           href={`mailto:${CONTACT_EMAIL}`}
-          className="mt-8 inline-flex items-center justify-center rounded-md bg-accent px-6 py-3 text-base font-medium text-white transition-colors hover:bg-accent-strong"
+          className="mt-8 inline-block font-serif text-2xl text-ink underline decoration-line underline-offset-8 transition-colors hover:text-accent hover:decoration-accent sm:text-3xl"
         >
           {CONTACT_EMAIL}
         </a>

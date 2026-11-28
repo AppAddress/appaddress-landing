@@ -1,43 +1,68 @@
 import { PRODUCTS } from "@/lib/constants";
 
+// The products are presented as residents listed at the address — a real
+// directory with dotted leaders, grounded in the brand name itself.
 export function Products() {
   return (
-    <section id="products" className="border-b border-line bg-surface-soft">
-      <div className="mx-auto max-w-6xl px-6 py-20 sm:py-24">
-        <h2 className="text-sm font-semibold uppercase tracking-wider text-accent">
-          Products
+    <section id="products" className="border-t border-line">
+      <div className="mx-auto max-w-5xl px-6 py-20 sm:py-28">
+        <h2 className="font-serif text-3xl text-ink sm:text-4xl">
+          At this address
         </h2>
-        <p className="mt-4 max-w-2xl text-2xl font-medium leading-snug text-ink">
-          Software we&rsquo;ve built, shipping in the real world.
+        <p className="mt-4 max-w-md leading-relaxed text-muted">
+          The products we build and run.
         </p>
 
-        <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-14 border-t border-line">
           {PRODUCTS.map((product) => (
-            <li
-              key={product.name}
-              className="flex flex-col rounded-xl border border-line bg-surface p-6 transition-shadow hover:shadow-sm"
-            >
-              <h3 className="text-xl font-semibold text-ink">{product.name}</h3>
-              <p className="mt-3 flex-1 leading-relaxed text-muted">
-                {product.blurb}
-              </p>
+            <li key={product.name} className="border-b border-line">
               <a
                 href={product.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-accent transition-colors hover:text-accent-strong"
+                className="group block py-7"
               >
-                Visit
-                <span aria-hidden>&rarr;</span>
-                <span className="sr-only">{product.name} (opens in a new tab)</span>
+                <div className="flex items-baseline gap-4">
+                  <span className="font-serif text-2xl text-ink transition-colors group-hover:text-accent">
+                    {product.name}
+                  </span>
+                  <span
+                    aria-hidden
+                    className="hidden flex-1 -translate-y-[0.35rem] border-b border-dotted border-line sm:block"
+                  />
+                  <span className="inline-flex items-center gap-2 whitespace-nowrap text-sm text-ink">
+                    <span
+                      aria-hidden
+                      className="h-1.5 w-1.5 rounded-full bg-accent"
+                    />
+                    {product.status}
+                  </span>
+                </div>
+                <p className="mt-2 max-w-md text-sm leading-relaxed text-muted">
+                  {product.blurb}
+                </p>
+                <span className="sr-only">
+                  {product.name} (opens in a new tab)
+                </span>
               </a>
             </li>
           ))}
 
           {/* Portfolio signal: more products to come. */}
-          <li className="flex flex-col items-start justify-center rounded-xl border border-dashed border-line bg-transparent p-6">
-            <h3 className="text-xl font-semibold text-muted">More products</h3>
-            <p className="mt-3 leading-relaxed text-muted">Coming soon.</p>
+          <li className="border-b border-line py-7">
+            <div className="flex items-baseline gap-4">
+              <span className="font-serif text-2xl text-muted">
+                More products
+              </span>
+              <span
+                aria-hidden
+                className="hidden flex-1 -translate-y-[0.35rem] border-b border-dotted border-line sm:block"
+              />
+              <span className="whitespace-nowrap text-sm text-muted">Soon</span>
+            </div>
+            <p className="mt-2 max-w-md text-sm leading-relaxed text-muted">
+              In the workshop.
+            </p>
           </li>
         </ul>
       </div>
